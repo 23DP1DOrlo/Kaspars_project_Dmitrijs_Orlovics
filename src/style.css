@@ -277,30 +277,7 @@ footer {
   padding: 10px 0;
 }
 
-.falling-objects {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 500;
-}
 
-.falling {
-  position: absolute;
-  width: 40px;
-  animation: fall 3s linear forwards;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-100px) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
 
 
 .user-guide-container {
@@ -546,3 +523,12 @@ body.dark-theme .button {
   
 }
 
+
+
+body {
+  transition: background-color 0.6s ease, color 0.6s ease, filter 0.3s ease;
+}
+
+body.switching {
+  filter: brightness(80%);
+}

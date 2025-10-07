@@ -1,12 +1,19 @@
 const toggleBtn = document.getElementById("theme-toggle");
 
-    toggleBtn.addEventListener("click", () => {
+  toggleBtn.addEventListener("click", () => {
+    // Добавляем класс "switching" для лёгкого затемнения
+    document.body.classList.add("switching");
+
+    // Через 150 мс переключаем тему
+    setTimeout(() => {
       document.body.classList.toggle("dark-theme");
 
-      // Меняем иконку в зависимости от темы
-      if (document.body.classList.contains("dark-theme")) {
-        toggleBtn.textContent = "🌞"; // тёмная тема
-      } else {
-        toggleBtn.textContent = "🌙"; // светлая тема
-      }
-    });
+      // Меняем иконку 🌞 / 🌙
+      toggleBtn.textContent = document.body.classList.contains("dark-theme") ? "🌞" : "🌙";
+
+      // Убираем эффект затемнения плавно
+      setTimeout(() => {
+        document.body.classList.remove("switching");
+      }, 200);
+    }, 150);
+  });
