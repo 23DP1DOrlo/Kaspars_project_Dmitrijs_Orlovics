@@ -1,123 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project</title>
-    <link rel="stylesheet" href="/Kaspars/projekta_website/src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    </head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Mail Messenger — Clean</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/Kaspars/projekta_website/src/style.css">
+</head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="nav-left">   
-                <a href="#hero">Home</a>
-                <a href="#about-us">About Us</a>
-                <a href="#features">Features</a>
-                <a href="#user-guide">User guide</a> 
-            </div>
-            <div class="theme-btn">
-              <button id="theme-toggle" class="button">🌙</button>
-            </div>
-       </div>
-        </header>
-        <section id="hero">
-            <div class="hero-container">
-              <div class="herodiv">
-                <h1>
-                  <!-- <small>Your </small><strong>Perfect</strong><br> -->
-                  <small>Project name</small>
-                </h1>
-              </div>
-              <!-- <div class="live-stats">
-                <h3>Statistics in real time</h3>
-                <ul>
-                  <li>Sessions today: <span id="sessions">0</span></li>
-                  <li>Users online: <span id="users">0</span></li>
-                  <li>Countries: <span id="countries">0</span></li>
-                </ul>
-              </div> -->
-            </div>
-          </section>  
-    <br>
-    <!-- <hr> -->
-    <section id="about-us">
-        <h1>Welcome to my project!</h1>
-        <!-- <p>Created with a passion for speedcubing and coding, this site offers a clean, responsive timer to help you track and improve your solve times. Whether you’re just starting out or aiming for your next PB, our tool is here to support your progress.</p>
-        <p>More features are on the way—stay tuned, and happy cubing!</p>
-    <div class="timer">
-        <h2>Your time to shine - how fast can you solve the cube?</h2>
-        <div id="simple-timer">00:00:00</div>
-        <div id="message"></div> -->
-    </div>
-    </section>
-    <br>
-    <hr>
-    <section id="features">
-        <h2><strong>PROJECT <small>main features</small></strong></h2>
-        <div class="solvers-container">
-          <div class="solver">
-            <p><strong>Feature 1</strong></p>
-            <img src="WebPage/src/images/fototot.jpg">
-          </div>
-          <div class="solver">
-            <img src="WebPage/src/images/fototot.jpg">
-            <p><strong>Feature 2</strong></p>
-          </div>
-          <div class="solver">
-            <p><strong>Feature 3</strong></p>
-            <img src="WebPage/src/images/fototot.jpg">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="#hero" class="logo">E-Mail <span class="accent">Messenger</span></a>
+      </div>
+
+      <nav id="nav" class="nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#features">Features</a>
+
+        <div class="dropdown" id="desktop-dropdown">
+          <button class="dropbtn" aria-expanded="false">User Guide ▾</button>
+          <div class="dropdown-panel" role="menu" aria-hidden="true">
+            <a href="#installation">Installation</a>
+            <a href="#usage">Usage</a>
+            <a href="#repository">Repository</a>
           </div>
         </div>
-      </section>
-      <br>
-      <hr>
-      <section id="user-guide">
-        <div class="user-guide-container">
-            <h2>User guide</h2>
-            <!-- <p>This section will guide you through downloading, installing, and using the <strong>RC Timer Desktop App</strong> created with PyQt5.</p>
-          
-            <div class="guide-step">
-              <h3>1. Installation</h3>
-              <p>To run the desktop version, make sure you have <strong>Python 3.10+</strong> installed.</p>
-            </div>
-          
-            <div class="guide-step">
-              <h3>2. Launch the App</h3>
-              <p>Navigate to the project folder and run:</p>
-              <code>python main.py</code>
-              <p>The application window will open with the RC Timer interface.</p>
-            </div>
-          
-            <div class="guide-step">
-              <h3>3. Usage</h3>
-              <ul>
-                <li>Press and hold <strong>Space</strong> to start and stop the timer.</li>
-                <li>The time will display in real time with millisecond accuracy.</li>
-                <li>Based on your solve time, you’ll receive fun motivational messages.(On the website)</li>
-                <li>The app supports account logins, session tracking, and logout functionality.</li>
-              </ul>
-            </div>
-          
-            <div class="guide-step">
-              <h3>4. Known Issues</h3>
-              <ul>
-                <li>Make sure PyQt5 is correctly installed (use <code>pip install pyqt5</code> if not).</li>
-              </ul>
-              <li><a href="https://github.com/23DP1DOrlo/PYTHON_PROJECT_Dmitrijs_Orlovics">Repository</a></li>
-            </div>
-          
-            <p>If you encounter bugs or have suggestions, feel free to contact the developer: <strong>Dmitrijs Orlovics</strong>.</p> -->
-          </div>
-      </section>
-    <footer>
-        All rights reserved Dmitrijs Orlovics
-    </footer>
-    <div class="falling-objects">
-        <img src="WebPage/src/images/svg/cube.svg" class="falling" />
+      </nav>
+
+      <div class="controls">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="burger" class="burger" aria-label="Open menu">☰</button>
+      </div>
     </div>
-    <script src="/Kaspars/projekta_website/src/script.js"></script>
+
+    <div id="mobile-nav" class="mobile-nav" hidden>
+      <a href="#hero">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#features">Features</a>
+
+      <div class="mobile-dropdown">
+        <button class="mobile-dropbtn">User Guide ▾</button>
+        <div class="mobile-panel">
+          <a href="#installation">Installation</a>
+          <a href="#usage">Usage</a>
+          <a href="#repository">Repository</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>E-Mail <span class="accent">Messenger</span></h1>
+          <p class="lead">Vienkāršs un ātrs rīks e-pasta ziņojumu nosūtīšanai un saņemšanai. Tīra saskarne, ērta lietošana mobilajās ierīcēs.</p>
+          <a href="#features" class="btn">Skatīties funkcijas</a>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="svg-box" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="10" width="188" height="140" rx="14" fill="#fff" opacity="0.6"/>
+            <rect x="20" y="28" width="160" height="24" rx="6" fill="#2b1b1a"/>
+            <rect x="20" y="64" width="160" height="68" rx="6" fill="#eee"/>
+            <circle cx="44" cy="44" r="8" fill="#fff"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Welcome to E-Mail Messenger</h2>
+        <p class="center">Projekts, kas parāda tīru interfeisu un funkciju kopumu vēstuļu sūtīšanai/saņemšanai un veidņu pārvaldībai. Viegli un ātri izveidots makets demonstrācijai.
+
+        </p>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2>APP MAIN FEATURES<small> </small></h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-visual">✉️</div>
+            <h3>Feature 1</h3>
+            <p>Vēstuļu nosūtīšana.</p>
+          </article>
+          <article class="card">
+            <div class="card-visual">⚙️</div>
+            <h3>Feature 2</h3>
+            <p>Profila rediģēšana.</p>
+          </article>
+          <article class="card">
+            <div class="card-visual">📊</div>
+            <h3>Feature 3</h3>
+            <p>Statistika.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="user-guide" class="section pale">
+      <div class="container user-guide">
+        <h2>User guide</h2>
+        <div class="guide-grid">
+          <div class="card small">
+            <h4 id="installation">Installation</h4>
+            <p>Klonē repozitoriju un atver index.html pārlūkprogrammā.</p>
+          </div>
+          <div class="card small">
+            <h4 id="usage">Usage</h4>
+            <p>Izmanto navigāciju, pārslēdz tēmas un testē komponentu.</p>
+          </div>
+          <div class="card small">
+            <h4 id="repository">Repository</h4>
+            <p>Pievieno saiti uz savu git repozitoriju vai vietējo projekta mapi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <strong>E-Mail Messenger</strong> — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="/Kaspars/projekta_website/src/script.js"></script>
 </body>
 </html>
